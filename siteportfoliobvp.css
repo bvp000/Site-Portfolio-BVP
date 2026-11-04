@@ -44,7 +44,7 @@ nav > ul > li:first-child {
     margin-right: auto;
     padding: 0px 0px 0px 40px;
 }
-nav > ul > li:first-child > img {
+nav > ul > li:first-child > a > img {
     width: 60px;
 }
 nav > ul > li > img {
@@ -74,12 +74,17 @@ nav > ul > li > p > a:hover {
     color: var(--purple);
 }
 main > section {
-    margin: 300px 0px;
+    margin: 300px 10px;
 }
+
+main > section:first-child {
+    margin: 80px 0px 0px 0px;
+}
+
 h1 {
     font-family: briller, sans-serif;
-    font-weight: bold;
-    font-size: var(--h1size);
+    font-weight: 800;
+    font-size: clamp(10px,5vw,70px);
 }
 p {
     font-family: 'Lexend';
@@ -94,6 +99,12 @@ p {
     letter-spacing: 5.4px;
     margin: 15px;
 }
+
+#fotobea {
+    height: 40vh;
+}
+
+/*
 .mainbutton {
     font-family: briller, sans-serif;
     font-weight: thin;
@@ -106,30 +117,271 @@ p {
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
 }
+*/
+
+
+.buttoncontainer {
+    margin-inline: 1.5rem;
+    display: grid;
+    place-items: center;
+    margin: 20px;
+}
+
+.thebutton {
+    border-radius: 50px;
+    padding: 0px;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+.button_content {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 80px;
+}
+
+.button_content > p {
+    font-family: briller, sans-serif;
+    color: white;
+    font-size: 20px;
+    transition: 1s;
+    font-weight: 200;
+}
+
+
+
+.button_content div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    filter: blur(28px);
+}
+
+.button_shape1 {
+    background-color: rgb(225, 9, 124);
+    transform: translate(-130px, -16px);
+    animation: shape1 6s 1s ease-out infinite;
+    opacity: 0;
+    transition: opacity .2s;
+    scale: 120%;
+}
+
+.button_shape2 {
+    background-color: var(--purple);
+    transform: translate(-24px, 16px);
+    animation: shape2 6s ease-in infinite;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.button_shape3 {
+    background-color: rgb(225, 9, 124);
+    transform: translate(20px, -16px);
+    animation: shape3 6s ease-out infinite;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.button_shape4 {
+    background-color: var(--purple);
+    transform: translate(140px, 16px);
+    animation: shape4 6s 1s ease-in infinite;
+    opacity: 0;
+    transition: opacity .2s;
+    scale: 120%;
+}
+
+.button_text {
+    position: relative;
+    z-index: 10;
+    opacity: 0.8;
+    text-shadow: 0 0 0 transparent;
+    transition: text-shadow 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.thebutton:hover .button_text {
+    text-shadow: 0.3px 0 0 currentColor,
+                -0.3px 0 0 currentColor;
+    opacity: 1;
+}
+
+.button_shadow {
+    width: 220px;
+    height: 1rem;
+    background: linear-gradient(80deg, #2d0b71 10%, var(--purple) 90%);
+    border-radius: 4rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 660px;
+    z-index: -1;
+    filter: blur(12px);
+    opacity: 0;
+    transition: opacity .5s;
+
+}
+
+.thebutton:hover + .button_shadow {
+    opacity: 0.4;
+}
+
+.thebutton:hover .button_shape1 {
+    opacity: 70%;
+}
+
+.thebutton:hover .button_shape2 {
+    opacity: 70%;
+}
+
+.thebutton:hover .button_shape3 {
+    opacity: 70%;
+}
+
+.thebutton:hover .button_shape4 {
+    opacity: 70%;
+}
+
+/*
+.thebutton:hover > .button_content > p {
+    font-weight: 600;
+    transition: font-weight 0.3s ease-in-out;
+}
+    */
+
+
+
+@keyframes shape1 {
+    33%{
+        transform: translate(-110px);
+    }
+}
+
+@keyframes shape2 {
+    33%{
+        transform: translate(-46px, 28px);
+    }
+}
+
+@keyframes shape3 {
+    33%{
+        transform: translate(20px, 4px);
+    }
+}
+
+@keyframes shape4 {
+    33%{
+        transform: translate(80px, 0);
+    }
+}
+
+
+/*=https://www.youtube.com/watch?v=FxOtOJmoPKA=*/
 
 #posgrad {
     font-size: 23px;
 }
 
+.carrosselcontorno {
+    border-width: 0.5px;
+    border-color: rgba(255, 255, 255, 0.445);
+    border-style: solid;
+    padding: 20px 40px;
+    border-radius: 40px;
+    width: 70vw;
+    max-width: 1400px;
+    margin: -4.8em auto 0 auto;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    width: 70vw;
+    margin: auto;
+    border-radius: 35px;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+    )
+}
+
+.carrossel::-webkit-scrollbar {
+    display:none;
+}
+
+.group {
+    display: flex;
+    animation: spin 30s infinite linear;
+    gap: 1em;
+    padding-right: 1em;
+}
+
+.cards {
+    flex: 0 0 5em;
+}
+
+.habcards {
+    width: 30px;
+}
+/*
+.figcaptioncards {
+    font-family: 'Lexend';
+    font-weight: 150;
+    font-size: var(--ppequenosize);
+}
+*/
+@keyframes spin {
+    from {translate: 0;}
+    to {translate: -100%;}
+}
+
 .experiencias-logos-horiz {
-    height: clamp(30px, 5vw, 50px);
+    height: clamp(30px, 50vw, 50px);
     width: auto;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+
 }
 
 .experiencias-div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 100px;
+    gap: 0px 100px;
     width: 1000px;
     align-items: center;
-    margin: auto;
+    margin: 20px auto;
 }
 
 .experiencias-logos-vert {
     height: clamp(30px, 5vw, 50px);
     width: auto;
     margin: 10px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+
+@keyframes appear {
+    from {opacity: 0;
+    scale: 0.8}
+    to {opacity: 1;
+    scale: 1}
 }
 
 .normalbutton {
@@ -225,14 +477,32 @@ button {
 .grade-projetos {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 0px;
+    width: 100%;
 }
 
 .projeto {
-    width: 250px;
-    min-height: 140px;
+    min-width: 252px;
+    aspect-ratio: 101 / 79;
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: 0px;
+    flex: 1 1 252px;
+    box-sizing: border-box;
+}
+
+.projeto > a > p {
+    font-family: Lexend, sans-serif;
+    font-size: clamp(var(--ppequenosize), 20px, var(--psize2));
+    color: white;
+    padding: 10px;
+}
+
+
+.projeto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 h4 {
