@@ -1,7 +1,7 @@
 @charset"UTF-8";
 @font-face {
     font-family: 'Briller';
-    src:url('assets/Briller.woff2')  format ('woff2');
+    src:url('assets/Briller.woff2')  format('woff2');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
