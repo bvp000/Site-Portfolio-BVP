@@ -1,6 +1,6 @@
 @charset"UTF-8";
 @font-face {
-    font-family: 'briller';
+    font-family: 'Briller';
     src:url('assets/Briller.ttf')  format ('truetype');
     font-weight: normal;
     font-style: normal;
@@ -87,7 +87,7 @@ main > section:first-child {
 }
 
 h1 {
-    font-family: briller, sans-serif;
+    font-family: Briller, sans-serif;
     font-weight: 800;
     font-size: clamp(10px,5vw,70px);
 }
@@ -122,7 +122,7 @@ p {
 
 /*
 .mainbutton {
-    font-family: briller, sans-serif;
+    font-family: Briller, sans-serif;
     font-weight: thin;
     color:white;
     padding: 20px 80px;
@@ -161,7 +161,7 @@ p {
 }
 
 .button_content > p {
-    font-family: briller, sans-serif;
+    font-family: Briller, sans-serif;
     color: white;
     font-size: 20px;
     transition: 1s;
