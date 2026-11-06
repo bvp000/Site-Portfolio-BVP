@@ -1,13 +1,13 @@
 @charset"UTF-8";
 @font-face {
     font-family: 'briller';
-    src:url('assets/Briller.ttf')  format ('truetype');
+    src:url('assets/briller.ttf')  format ('truetype');
 }
 :root {
     --h1size: 70px;
     --psize: 25px;
     --psize2: 18px;
-    --ppequenosize: 16px;
+    --ppequenosize: 16.5px;
     --darkgrey: #1F1F1F;
     --grey: #4A4A4A;
     --purple: #6115F9
@@ -91,9 +91,20 @@ h1 {
 p {
     font-family: 'Lexend';
     font-weight: 300;
-    font-size: var(--psize);
+    font-size: 25px;
     margin: 0px;
 }
+
+#nome {
+    letter-spacing: 10.5px;
+    padding-bottom: 5px;
+    font-weight: 100;
+}
+
+#posgrad {
+    font-size: 23px !important;
+}
+
 .textopequeno {
     font-family: 'Lexend';
     font-weight: 150;
@@ -103,7 +114,7 @@ p {
 }
 
 #fotobea {
-    height: 40vh;
+    height: 35vh;
 }
 
 /*
@@ -300,7 +311,7 @@ p {
     border-radius: 40px;
     width: 70vw;
     max-width: 1400px;
-    margin: -4.8em auto 0 auto;
+    margin: -5.2vw auto 0 auto;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
 }
@@ -350,29 +361,29 @@ p {
     to {translate: -100%;}
 }
 
-.experiencias-logos-horiz {
-    height: clamp(30px, 50vw, 50px);
-    width: auto;
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-
-}
-
 .experiencias-div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 0px 100px;
-    width: 1000px;
+    width: min(100%, 1000px);
     align-items: center;
     margin: 20px auto;
 }
 
-.experiencias-logos-vert {
-    height: clamp(30px, 5vw, 50px);
+.experiencias-logos-horiz {
+    height: 50px;
     width: auto;
-    margin: 10px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    margin: 10px 10px;
+}
+
+.experiencias-logos-vert {
+    height: 50px;
+    width: auto;
+    margin: 10px 10px;
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
@@ -405,6 +416,9 @@ p {
     font-weight: 600;
 }
 
+/*
+
+
 
 .filtros-principais {
     display: flex;
@@ -415,6 +429,36 @@ p {
     max-width: 1150px;
     min-width: 280px;
     margin: auto;
+}
+*/
+
+.filtros-principais {
+    display: grid;
+    grid-template-columns: repeat(6, max-content);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    gap: 8px 0;
+}
+
+.filtro-principal {
+    width: max-content;
+    min-width: 0;
+    max-width: 100%;
+    justify-self: center;
+    white-space: nowrap;
+    margin: 0;
+    padding: 8px 20px;
+}
+
+.filtro-principal:nth-child(6n + 1) {
+    justify-self: start;
+}
+
+.filtro-principal:nth-child(6n) {
+    justify-self: end;
 }
 
 .abrir-filtros-div {
@@ -554,6 +598,8 @@ h4 {
     max-width: 1100px;
 }
 
+/* TELAS MÉDIAS */
+
 @media (max-width: 768px) {
 
     /* ESPAÇAMENTO DAS SEÇÕES */
@@ -573,15 +619,15 @@ h4 {
     }
 
     p {
-        font-size: clamp(15px, 4vw, 20px);
+        font-size: 19px;
     }
 
     #posgrad {
-        font-size: clamp(16px, 4vw, 20px);
+        font-size: 17.5px !important;
     }
 
     .textopequeno {
-        font-size: 12px;
+        font-size: 17px;
         letter-spacing: 2px;
     }
 
@@ -643,9 +689,7 @@ h4 {
     /* CARROSSEL DE HABILIDADES */
 
     .carrosselcontorno {
-        width: 95%;
-        padding: 15px;
-        margin: -2em auto 0;
+
     }
 
     .carrossel {
@@ -665,7 +709,7 @@ h4 {
     .experiencias-div {
         width: 100%;
         gap: 20px 30px;
-        padding: 0 10px;
+        margin: 10px 10px;
     }
 
     .experiencias-logos-horiz {
@@ -772,6 +816,10 @@ h4 {
     .normalbutton {
         font-size: 11px;
         padding: 6px 9px;
+    }
+
+    .carrosselcontorno {
+        margin: -3vw auto 0 auto;
     }
 
     .grade-projetos {
