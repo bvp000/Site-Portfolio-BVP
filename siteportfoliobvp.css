@@ -6,6 +6,8 @@
     font-style: normal;
     font-display: swap;
 }
+
+
 :root {
     --h1size: 70px;
     --psize: 25px;
@@ -87,7 +89,7 @@ main > section:first-child {
 }
 
 h1 {
-    font-family: Briller, sans-serif !important;
+    font-family: Syne, sans-serif !important;
     font-weight: 800;
     font-size: clamp(10px,5vw,70px);
 }
@@ -161,11 +163,11 @@ p {
 }
 
 .button_content > p {
-    font-family: Briller, sans-serif;
+    font-family: Syne, sans-serif;
     color: white;
     font-size: 20px;
     transition: 1s;
-    font-weight: 200;
+    font-weight: 700;
 }
 
 
