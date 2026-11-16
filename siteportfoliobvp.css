@@ -32,14 +32,11 @@ body {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-
     background: var(--purple);
     opacity: 0.25;
     filter: blur(70px);
-
     pointer-events: none;
     z-index: -1;
-
     transform: translate(-50%, -50%);
 }
 
@@ -633,7 +630,7 @@ button {
 }
 
 .projeto {
-    min-width: 252px;
+    min-width: 300px;
     aspect-ratio: 101 / 79;
     border: 1px solid #ccc;
     padding: 0px;
@@ -685,6 +682,48 @@ h4 {
 .projeto > a:hover p {
     opacity: 1;
 }
+
+.projeto-apresentacao {
+display: flex;
+flex-wrap: wrap;
+gap: 0px;
+width: 100%;
+}
+
+.projeto-apresentacao > img {
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.projeto-apresentacao > video {
+    margin: auto;
+    height: 100vh;
+    width: auto;
+}
+.titulo-do-projeto {
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+.descricao-do-projeto {
+    margin: auto;
+    padding: 40px;
+    font-size: 18px;
+    max-width: 1350px;
+}
+
+.texto-projeto {
+    margin: 20px;
+    width: 100%;
+}
+
+.voltar {
+    font-size: 16px;
+    margin: 20px;
+    float: left;
+}
+
 
 
 /* TELAS MÉDIAS PARA GRANDE */
